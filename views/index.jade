@@ -5,6 +5,19 @@ block content
   p Welcome to #{title}
   
   :markdown
-    This is a demo of the node-qvx library that uses information from 
-    http://www.scb.se/api/ (Statistics Sweden).
+    This is a demo of the node-qvx (https://github.com/kmpm/node-qvx) library that uses information from 
+    SCB / Statistics Sweden (http://www.scb.se/api/) and turns them into information usable by 
+    products from http://qlik.com like QlikView and Qlik Sense Desktop.
+    
     There are some transformations done to fit the flat table layout that qvx data can represent
+    
+    More documentation will be provided but for now you can just fetch data from...
+    * https://qvx-demo.herokuapp.com/population/meta/variables
+    * https://qvx-demo.herokuapp.com/population/meta/variables/Region
+    * https://qvx-demo.herokuapp.com/population/meta/variables/Civilstand
+    * https://qvx-demo.herokuapp.com/population/meta/variables/Kon
+    * https://qvx-demo.herokuapp.com/population/meta/variables/Alder
+    * https://qvx-demo.herokuapp.com/population/meta/variables/ContentsCode
+    * https://qvx-demo.herokuapp.com/population/meta/variables/Tid
+    
+    ...and add these as web files in your qlik load script.
