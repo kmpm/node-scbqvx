@@ -5,9 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('workspace:server');
+var debug = require('debug')('scbqvx:server');
 var http = require('http');
-
+console.log("DEBUG is set to `%s`", process.env.DEBUG);
 /**
  * Get port from environment and store in Express.
  */
