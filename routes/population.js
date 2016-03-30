@@ -18,32 +18,18 @@ router.get('/meta', function(req, res, next) {
   scb.populationMeta()
   .then(function (data) {
     res.json(data);
-  })
-});
-
-
-
-router.get('/meta/variables/:code', function(req, res, next) {
-  scb.populationMeta()
-  .then(function (data) {
-    return lib.filterByCode(req.params.code)(data.variables);
-  })
-  .then(function (data) {
-    var result = [];
-    for(var i = 0; i < data.values.length; i++) {
-      result.push({value: data.values[i], name: data.valueTexts[i]});
-    }
-    sendQvx(res, result, schemas.metaVariableValues);
-  })
-  .catch(next);
+  });
 });
 
 
 router.get('/meta/variables', function(req, res, next) {
   scb.populationMeta()
   .then(function (data) {
-    var result = data.variables.map(function(x) {
-      return {code: x.code, text: x.text};
+    var result = [];
+    data.variables.forEach(function (variable) {
+      for(var i = 0; i < variable.values.length; i++) {
+        result.push({code: variable.code, value: variable.values[i], name: variable.valueTexts[i]});
+      }
     });
     
     sendQvx(res, result, schemas.metaVariables);
