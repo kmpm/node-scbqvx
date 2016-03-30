@@ -1,9 +1,12 @@
 {
-  "name": "workspace",
+  "name": "scbqvx",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": "4.x.x"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
