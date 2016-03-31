@@ -1,0 +1,13 @@
+h2 Table {{$stateParams.tableId}}
+h3 {{meta.title}} 
+
+.variablelist(ng-repeat="v in meta.variables")
+  p 
+    strong {{v.code}} - {{v.text}}
+  table.table
+    tbody
+      tr(ng-repeat="value in v.values")
+        td {{value}}
+        td {{v.valueTexts[$index]}}
+      
+{{meta}}

@@ -1,0 +1,11 @@
+.tablelist(ng-hide="$stateParams.tableId")
+  h2 Level {{$stateParams.levelId}}
+  table.table.table-hover
+    
+    tbody
+      tr(ng-repeat="item in tables")
+        td 
+          a(ui-sref=".table({tableId: item.id})") {{item.id}} - {{item.text}}
+        td Type {{item.type}}
+        td Updated {{item.updated}}
+ui-view

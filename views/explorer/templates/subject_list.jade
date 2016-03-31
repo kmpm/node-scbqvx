@@ -1,0 +1,11 @@
+table.table.table-hover(ng-hide="$stateParams.subjectId")
+  tbody
+    tr(ng-repeat="item in subjects")
+      td 
+        a(ui-sref="subject.level({subjectId: item.id})") {{item.id}} - {{item.text}}
+      
+      td Type {{item.type}}
+      
+
+ui-view
+  //- p something should show here

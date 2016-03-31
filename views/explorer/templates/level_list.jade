@@ -1,0 +1,11 @@
+.levellist(ng-hide="$stateParams.levelId")
+  h2 Subject {{$stateParams.subjectId}}
+  table.table.table-hover
+    tbody
+      tr(ng-repeat="item in levels") 
+        td 
+          a(ui-sref=".next({ levelId: item.id})") {{item.id}} - {{item.text}} 
+        td Type {{item.type}}
+
+ui-view
+//- p something should show here

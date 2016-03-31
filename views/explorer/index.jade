@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  
+  .container-fluid
+    .row
+      .span12(ncy-breadcrumb)
+    .row
+      .span12(ui-view)
+        
+  </div>
+</div>     
+  
+
+block scripts
+  script(src="/explorer/app.js")
+  script(src="/explorer/controllers.js")
+  script(src="/explorer/services.js")
+  

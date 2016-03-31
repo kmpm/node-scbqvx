@@ -1,0 +1,82 @@
+[
+  {
+    "id": "BE",
+    "type": "l",
+    "text": "Population"
+  },
+  {
+    "id": "FM",
+    "type": "l",
+    "text": "Financial markets"
+  },
+  {
+    "id": "HE",
+    "type": "l",
+    "text": "Household finances"
+  },
+  {
+    "id": "LE",
+    "type": "l",
+    "text": "Living conditions"
+  },
+  {
+    "id": "MI",
+    "type": "l",
+    "text": "Environment"
+  },
+  {
+    "id": "NV",
+    "type": "l",
+    "text": "Business activities"
+  },
+  {
+    "id": "PR",
+    "type": "l",
+    "text": "Prices and Consumption"
+  },
+  {
+    "id": "UF",
+    "type": "l",
+    "text": "Education and research"
+  },
+  {
+    "id": "AM",
+    "type": "l",
+    "text": "Labour market"
+  },
+  {
+    "id": "BO",
+    "type": "l",
+    "text": "Housing, construction and building"
+  },
+  {
+    "id": "HA",
+    "type": "l",
+    "text": "Trade in goods and services"
+  },
+  {
+    "id": "JO",
+    "type": "l",
+    "text": "Agriculture, forestry and fishery"
+  },
+  {
+    "id": "ME",
+    "type": "l",
+    "text": "Democracy"
+  },
+  {
+    "id": "NR",
+    "type": "l",
+    "text": "National accounts"
+  },
+  {
+    "id": "OE",
+    "type": "l",
+    "text": "Public finances"
+  },
+  {
+    "id": "TK",
+    "type": "l",
+    "text": "Transport and communications"
+  }
+]
