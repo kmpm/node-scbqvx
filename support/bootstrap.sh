@@ -4,21 +4,26 @@ export DEBIAN_FRONTEND=noninteractive
 
 
 #add to PACKAGES and install in the end
-PACKAGES=""
+PACKAGES="language-pack-en-base language-pack-sv-base"
 #memcached
 PACKAGES="$PACKAGES memcached"
 
-
-
 #install PACKAGES
 #apt update
-apt install -y $PACKAGES
+apt-get install -y $PACKAGES
+
+#locale fix
+echo LC_ALL="sv_SE.UTF-8" >>/etc/default/locale
+locale-gen
 
 # fix hostname lookup for sudo
 echo 127.0.1.1 $HOSTNAME >> /etc/hosts
 
-sed -i 's/-l 127.0.0.1/-l 0.0.0.0/g' /etc/memcached.conf
-service memcached restart
+function install-memcached() {
+  #bind to all interfaces
+  sed -i 's/-l 127.0.0.1/-l 0.0.0.0/g' /etc/memcached.conf
+  service memcached restart
+}
 
 function install-mongodb() {
   echo "installing mongodb"
@@ -49,7 +54,7 @@ processManagement:
   fork: true
   pidFilePath: /var/run/mongodb/mongod.pid
 net:
-  bindIp: 127.0.0.1
+  bindIp: 0.0.0.0
   port: 27017
 setParameter:
   enableLocalhostAuthBypass: false
@@ -93,16 +98,16 @@ setParameter:
   systemctl enable mongod.service
 
   echo "create collection and user"
-  echo 'db = db.getSiblingDB('projdb');
+  echo 'db = db.getSiblingDB("projdb");
 db.createUser({user: "projUser",
         pwd: "projPassword",
         roles: [{ role: "readWrite", db: "projdb"}]
 });
 ' > /tmp/security.js
   /opt/mongodb/bin/mongo /tmp/security.js
-  
+
 
 }
 
-
+install-memcached
 install-mongodb
