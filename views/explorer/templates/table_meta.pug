@@ -1,0 +1,27 @@
+.container
+  .row
+    h2 Table {{$stateParams.tableId}}
+    h3 {{meta.title}} 
+    a.btn.btn-default(href="/qvx/meta/{{$stateParams.subjectId}}/{{$stateParams.levelId}}/{{$stateParams.tableId}}") Get table metadata as QVX
+    a.btn.btn-default(href="/scbjson/{{$stateParams.subjectId}}/{{$stateParams.levelId}}/{{$stateParams.tableId}}") Get data as JSON
+
+    h4 Variables
+    .variablelist.form-horizontal(ng-repeat="c in data.codes")
+      .form-group
+        label.col-sm-2.control-label(for="{{c.code}}") {{c.text}}
+        .col-sm-10
+          select.form-control(multiple id="{{v.code}}" rows="5")
+            //option(ng-repeat="value in v.values" value="{{value}}") {{v.valueTexts[$index]}}
+
+
+    //- .variablelist(ng-repeat="v in meta.variables")
+    //-   p 
+    //-     strong {{v.code}} - {{v.text}}
+    //-   table.table
+    //-     tbody
+    //-       tr(ng-repeat="value in v.values")
+    //-         td {{value}}
+    //-         td {{v.valueTexts[$index]}}
+
+
+    //- p {{meta}}

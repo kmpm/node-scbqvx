@@ -47,3 +47,8 @@ router.get('/subject/:subjectId/level/:levelId/:tableId', function (req, res, ne
   })
   .catch(next);
 });
+
+
+router.post('/query', function (req, res, next) {
+  data = req.body;
+});

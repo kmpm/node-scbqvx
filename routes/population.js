@@ -14,7 +14,7 @@ function sendQvx(res, data, schema) {
 }
 
 /* GET home page. */
-router.get('/meta', function(req, res, next) {
+router.get('/meta/', function(req, res, next) {
   scb.populationMeta()
   .then(function (data) {
     res.json(data);

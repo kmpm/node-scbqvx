@@ -23,3 +23,8 @@ explorerServices.factory('Table', ['$resource',
       query: {method:'GET', params:{tableId:''}, isArray:false}
     });
   }]);
+
+//TODO: ScbQuery
+/* 
+ * Some kind of query that does what is described at http://www.scb.se/sv_/Om-SCB/Oppna-data-API/API-for-Statistikdatabasen/ 
+ */
